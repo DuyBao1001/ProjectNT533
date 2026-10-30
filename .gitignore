@@ -1,0 +1,50 @@
+# ---- Build (Maven) ----
+target/
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+
+# ---- Kết quả sinh ra khi chạy (tái tạo được bằng scripts/run_all.sh) ----
+# Chi tiết từng lần chạy rất nhiều file (~15 MB cho ma trận 60 lần): không đưa vào git.
+results/*_tasks.csv
+results/*_util.csv
+results/*_scale.csv
+# Thư mục chạy thử tạm (results_test, results_tmp, ...).
+results_*/
+# Giữ results/summary.csv (nhỏ, là kết quả chính) và figures/ (bảng, biểu đồ cho báo cáo).
+# Lưu ý: summary.csv được nối thêm vào cuối mỗi lần chạy; xóa trước khi chạy lại ma trận (xem CLAUDE.md).
+
+# ---- Java ----
+*.class
+hs_err_pid*
+replay_pid*
+*.log
+
+# ---- IDE / trình soạn thảo ----
+# VS Code (bản cá nhân) và các file do tiện ích Java của VS Code / Eclipse sinh ra.
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+.apt_generated/
+# IntelliJ
+.idea/
+*.iml
+*.swp
+*~
+
+# ---- Hệ điều hành ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Python (scripts/gen_trace.py, scripts/analyze.py) ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# ---- Claude Code: cấu hình cục bộ của từng người (CLAUDE.md thì giữ lại) ----
+.claude/settings.local.json

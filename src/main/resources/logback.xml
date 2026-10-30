@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Chỉ hiện cảnh báo/lỗi của CloudSim Plus: mức INFO in ~10 000 dòng mỗi lần chạy.
+     Đổi level thành INFO khi cần xem chi tiết từng sự kiện. Không dùng điều kiện Janino. -->
+<configuration>
+  <!-- Tắt phần in trạng thái khởi tạo logback (nó in ~25 dòng vì logback.xml của CloudSim Plus cũng nằm trên classpath). -->
+  <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%-5level %msg%n</pattern>
+    </encoder>
+  </appender>
+  <root level="WARN">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>
